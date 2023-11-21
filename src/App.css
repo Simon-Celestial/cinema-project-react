@@ -1,0 +1,10 @@
+.site-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.site-main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}

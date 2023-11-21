@@ -1,0 +1,85 @@
+.site-section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.cinema-section {
+  background-image: url("//xenothemes.co.uk/specto/wp-content/uploads/sites/2/2017/07/hero-2-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 880px;
+  min-height: 600px;
+  text-align: center;
+  background-color: #000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.background-container{
+  width: 1170px;
+  display: flex;
+  .background-content {
+    width: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+    p {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--light-orange-color);
+    }
+    h1 {
+      font-size: 52px;
+      font-weight: 300;
+      padding: 0;
+      -webkit-animation: Heading .5s .5s forwards;
+      animation: Heading .5s .5s forwards;
+      letter-spacing: 3px;
+      color: white;
+      border: none;
+    }
+    h2 {
+      font-size: 18px;
+      color: #fff;
+      text-align: start;
+    }
+  }
+  .trailer-block {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 10px;
+    span {
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 48px;
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      margin-right: 8px;
+      text-align: center;
+      color: #fff;
+      border: solid 2px #fff;
+      border-radius: 50%;
+    }
+    .play-trailer-button {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      border-width: 2px;
+      border-radius: 30px;
+      padding: 12px 24px;
+      background: linear-gradient(to right, #ec7532 0%,#fbbd61 100%);
+      p {
+        color: white;
+        font-size: 13px;
+        font-weight: normal;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

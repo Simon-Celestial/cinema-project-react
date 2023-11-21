@@ -1,0 +1,34 @@
+:root {
+  --main-font: 'Roboto Condensed', sans-serif;
+  --light-orange-color: #fbbd61;
+
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  font-family: var(--main-font);
+  color: white;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
