@@ -14,7 +14,7 @@ const Header = () => {
     };
 
     return (
-        <header className="site-header">
+        <header className="site-header" id="topScroll">
             <div className="header-content">
                 <div className="header-top">
                     <a href="tel:123456789" className="header-top-number">
