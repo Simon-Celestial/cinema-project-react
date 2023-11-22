@@ -1,4 +1,4 @@
-import {Phone, Play} from "@phosphor-icons/react";
+import {Play} from "@phosphor-icons/react";
 import React from "react";
 
 const BackgroundContainer = () => {
@@ -12,11 +12,12 @@ const BackgroundContainer = () => {
                     humanitatis per seacula quarta decima et quinta decima.</h2>
                 <div className="trailer-block">
                       <span>
-                         12 A
+                         12A
                       </span>
-                    <a href="https://www.youtube.com/watch?v=c1ogl58rGeU&ab_channel=WorldofPlayStation" className="play-trailer-button" target="_blank">
-                        <Play size={18} weight="fill" color="white"/>
-                        <p>PLAY TRAILER</p>
+                    <a href="https://www.youtube.com/watch?v=c1ogl58rGeU&ab_channel=WorldofPlayStation"
+                       className="play-trailer-button" target="_blank">
+                        <Play size={16} weight="fill" color="white"/>
+                        <h2>PLAY TRAILER</h2>
                     </a>
                 </div>
             </div>

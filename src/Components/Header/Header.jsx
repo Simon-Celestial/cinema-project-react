@@ -23,38 +23,37 @@ const Header = () => {
                     </a>
                 </div>
                 <div className="header-bottom">
-                    <a  href="/" className="header-bottom-logo">
+                    <a  href="#" className="header-bottom-logo">
                         <img src="//xenothemes.co.uk/specto/wp-content/uploads/sites/2/2018/02/logo.svg"
-                             alt="site-logo"/>
+                             alt="Site logo"/>
                     </a>
                     <div className="header-bottom-navigation">
                         <a href="/">
                             HOME
                         </a>
-                        <a href="/"
+                        <a href="#"
                            onMouseEnter={handleMouseEnter}
                            onMouseLeave={handleMouseLeave}
                         >
                             WHAT'S ON
                             <div className={`nav-dropdown ${isDropdownOpen ? 'nav-dropdown-active' : ''}`}>
-                                <a href="">
+                                <h5>
                                     ALL MOVIES
-                                </a>
+                                </h5>
                             </div>
                         </a>
-                        <a href="/">
+                        <a href="#">
                             NEWS
                         </a>
-                        <a href="/">
+                        <a href="#">
                             SHORTCODES
                         </a>
-                        <a href="/">
+                        <a href="#">
                             CONTACT US
                         </a>
                     </div>
                 </div>
             </div>
-
         </header>
     )
 }
