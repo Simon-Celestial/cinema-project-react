@@ -2,10 +2,10 @@ import "./Main.scss";
 import BackgroundContainer from "../Сommon/BackgroundContainer.jsx";
 import FilmsContainer from "../Сommon/FilmsContainer.jsx";
 import ScheduleFilms from "../Сommon/ScheduleFilms.jsx";
-import {Star, Play, CalendarBlank,CaretRight} from "@phosphor-icons/react";
+import {Star, Play, CalendarBlank, CaretRight, MagnifyingGlass} from "@phosphor-icons/react";
 import React from "react";
 import SliderCardContainer from "../Сommon/SliderCardContainer.jsx";
-
+import FetchedData from "../Сommon/FetchedData.jsx";
 
 const Main = () => {
     return (
@@ -21,6 +21,26 @@ const Main = () => {
                 <div className="moving-block">
                     <img src="https://xenothemes.co.uk/specto/wp-content/themes/specto/images/scroll-arrow.svg"
                          alt="Moving arrow"/>
+                </div>
+            </section>
+
+            {/*ALL FILMS AND SEARCH SECTION*/}
+            <section className="site-section all-films-section">
+                <div className="all-films-content">
+                    <div className="all-films-heading">
+                        <div className="all-films-heading-item">
+                            <p>ALL FILMS</p>
+                        </div>
+                    </div>
+                    <div className="all-films-search-container">
+                        <input className="all-films-search-input" type="text" placeholder="Type to search"/>
+                        <div className="search-button">
+                            <MagnifyingGlass size={25} weight="bold" color="#ec7532"/>
+                        </div>
+                    </div>
+                    <div className="all-films-data-container">
+                        <FetchedData/>
+                    </div>
                 </div>
             </section>
 
@@ -106,7 +126,7 @@ const Main = () => {
                                 litterarum formas humanitatis per seacula quarta decima et quinta decima.</h2>
                             <a href="https://xenothemes.co.uk/specto/movies/colliding-planets/" target="blank">
                                 MORE INFO
-                                <CaretRight size={10} weight="bold" color="#ff6900" />
+                                <CaretRight size={10} weight="bold" color="#ff6900"/>
                             </a>
 
                         </div>
@@ -126,7 +146,7 @@ const Main = () => {
             </section>
             {/*SLIDER SECTION*/}
             <section className="slider-section site-section">
-                <SliderCardContainer />
+                <SliderCardContainer/>
             </section>
             {/*SUPPORT SECTION*/}
             <section className="site-section support-section">
