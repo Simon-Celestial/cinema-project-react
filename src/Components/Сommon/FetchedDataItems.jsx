@@ -1,36 +1,39 @@
-import {GlobeHemisphereEast, StarHalf, UsersThree} from "@phosphor-icons/react";
+// FetchedDataItems.jsx
+import { GlobeHemisphereEast, StarHalf, UsersThree } from "@phosphor-icons/react";
 import React from "react";
 
-const FetchedDataItems = () => {
+const FetchedDataItems = ({
+                              original_language,
+                              adult,
+                              original_title,
+                              popularity,
+                              release_date,
+                              overview,
+                              vote_average,
+                              vote_count,
+                              poster_path
+                          }) => {
     return (
         <div className="data-wrapper">
             <div className="data-image-block">
-                <img
-                    src="https://xenothemes.co.uk/specto/wp-content/uploads/sites/2/2017/07/movie-7-270x340.jpg"
-                    alt="Film Poster"/>
+                <img src={poster_path} alt="Film Poster" />
             </div>
             <div className="data-title-block">
-                <h1>The Creator</h1>
-                <p>Amid a future war between the human race and the forces of artificial intelligence, a
-                    hardened ex-special forces agent grieving the disappearance of his wife, is
-                    recruited to hunt down and kill the Creator, the elusive architect of advanced AI
-                    who has developed a mysterious weapon with the power to end the war—and mankind
-                    itself.</p>
-                <span>Release data: <span>2023-09-27</span></span>
+                <h1>{original_title}</h1>
+                <p>{overview}</p>
+                <span>Release date: <span>{release_date}</span></span>
                 <div className="language-box">
-                    <p>en</p>
+                    <p>{original_language}</p>
                 </div>
-                <div className="adult-box">
-                    <p>18+</p>
-                </div>
+                {adult && <div className="adult-box"><p>18+</p></div>}
                 <div className="data-film-rating">
-                    <p><StarHalf size={20} weight="duotone" color="#ec7532"/> 7</p>
-                    <p><UsersThree size={20} weight="duotone" color="#ec7532" /> 10 Votes</p>
-                    <p><GlobeHemisphereEast size={20} weight="duotone" color="#ec7532" />10 Popularity</p>
+                    <p><StarHalf size={20} weight="duotone" color="#ec7532" />{vote_average}</p>
+                    <p><UsersThree size={20} weight="duotone" color="#ec7532" />{vote_count} Votes</p>
+                    <p><GlobeHemisphereEast size={20} weight="duotone" color="#ec7532" />{popularity} Popularity</p>
                 </div>
-
             </div>
         </div>
-    )
-}
+    );
+};
+
 export default FetchedDataItems;

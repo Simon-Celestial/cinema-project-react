@@ -2,7 +2,7 @@ import "./Main.scss";
 import BackgroundContainer from "../Сommon/BackgroundContainer.jsx";
 import FilmsContainer from "../Сommon/FilmsContainer.jsx";
 import ScheduleFilms from "../Сommon/ScheduleFilms.jsx";
-import {Star, Play, CalendarBlank, CaretRight, MagnifyingGlass} from "@phosphor-icons/react";
+import {Star, Play, CalendarBlank, CaretRight} from "@phosphor-icons/react";
 import React from "react";
 import SliderCardContainer from "../Сommon/SliderCardContainer.jsx";
 import FetchedData from "../Сommon/FetchedData.jsx";
@@ -26,22 +26,7 @@ const Main = () => {
 
             {/*ALL FILMS AND SEARCH SECTION*/}
             <section className="site-section all-films-section">
-                <div className="all-films-content">
-                    <div className="all-films-heading">
-                        <div className="all-films-heading-item">
-                            <p>ALL FILMS</p>
-                        </div>
-                    </div>
-                    <div className="all-films-search-container">
-                        <input className="all-films-search-input" type="text" placeholder="Type to search"/>
-                        <div className="search-button">
-                            <MagnifyingGlass size={25} weight="bold" color="#ec7532"/>
-                        </div>
-                    </div>
-                    <div className="all-films-data-container">
-                        <FetchedData/>
-                    </div>
-                </div>
+                <FetchedData />
             </section>
 
             {/*NEW IN SECTION*/}
