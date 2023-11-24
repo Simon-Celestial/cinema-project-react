@@ -1,42 +1,17 @@
-// FetchedData.jsx
 import React, { useEffect, useState, useRef } from "react";
 import FetchedDataItems from "./FetchedDataItems.jsx";
 import { getData } from "../../MovieListAPI/getData.js";
-import { MagnifyingGlass } from "@phosphor-icons/react";
 
 const FetchedData = () => {
     const [data, setData] = useState([]);
-    // const [filteredData, setFilteredData] = useState([]);
-    // const [query, setQuery] = useState("");
     const input = useRef(null);
 
     useEffect(() => {
         getData().then((res) => {
             setData(res);
-            // setFilteredData(res);
         });
     }, []);
-    console.log(data)
-
-    // useEffect(() => {
-    //     if (Array.isArray(data)) {
-    //         setFilteredData(
-    //             data.filter((product) => {
-    //                 return product.title.toLowerCase().includes(query.toLowerCase());
-    //             })
-    //         );
-    //     }
-    // }, [data, query]);
-
-    // const handleSubmit = () => {
-    //     setQuery(input.current.value);
-    // };
-
-    // const handleKeyPress = (e) => {
-    //     if (e.key === "Enter" && input.current.value.trim() !== "") {
-    //         handleSubmit(e);
-    //     }
-    // };
+    console.log(data.results)
 
     return (
         <div className="all-films-content">
@@ -51,16 +26,7 @@ const FetchedData = () => {
                     className="all-films-search-input"
                     type="text"
                     placeholder="Type to search"
-                    // onChange={() => setQuery(input.current.value)}
-                    // onKeyDown={handleKeyPress}
                 />
-                <button
-                    className="search-button"
-                    // onClick={handleSubmit}
-                    disabled={query.trim() === ""}
-                >
-                    <MagnifyingGlass size={25} weight="bold" color="#ec7532" />
-                </button>
             </div>
             <div className="all-films-data-container">
                 {data.map((product) => (
