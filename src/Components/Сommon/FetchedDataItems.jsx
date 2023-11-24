@@ -12,10 +12,13 @@ const FetchedDataItems = ({
                               vote_count,
                               poster_path
                           }) => {
+    const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
+
+
     return (
         <div className="data-wrapper">
             <div className="data-image-block">
-                <img src={poster_path} alt="Film Poster" />
+                <img src={imageUrl} alt="Film Poster" />
             </div>
             <div className="data-title-block">
                 <h1>{original_title}</h1>
