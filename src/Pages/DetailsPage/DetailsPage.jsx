@@ -2,19 +2,41 @@ import "./DetailsPage.scss";
 import Header from "../../Components/Header/Header.jsx";
 import Footer from "../../Components/Footer/Footer.jsx";
 import SupportContainer from "../../Components/Сommon/SupportContainer.jsx";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import {GlobeHemisphereEast, StarHalf, UsersThree} from "@phosphor-icons/react";
 import {useParams} from "react-router-dom";
 import {getSingleData} from "../../MovieListAPI/getData.js";
 
+const useMovieData = (id) => {
+    const [movie, setMovie] = useState(null);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        (async () => {
+            const result = await getSingleData(id).catch((err) => {
+                console.log(err)
+            });
+            setMovie(result);
+            setLoading(false);
+        })();
+    }, [id]);
+
+
+    return {
+        loading,
+        movie,
+    };
+}
 const DetailsPage = () => {
-    const [product,setProduct] = useState({})
-        let {id}= useParams();
-        getSingleData(id).then((res) => {
-            setProduct(res)
-        }).catch((err) => {
-            console.log(err)
-        });
+    let {id} = useParams();
+
+    const {
+        loading: movieLoading,
+        movie,
+    } = useMovieData(id);
+    console.log(movie);
+    const imageUrl = `https://image.tmdb.org/t/p/w500${movie?.poster_path}`;
+    const ratingColor = movie?.vote_average < 5 ? "red" : (movie?.vote_average < 7 ? "#ec7532" : "green");
+
 
     return (
         <div className="details-page-wrapper">
@@ -27,26 +49,37 @@ const DetailsPage = () => {
                             </div>
                         </div>
                         <div className="details-page-film-card">
-                            <div className="details-image-block">
-                                <img src="https://image.tmdb.org/t/p/w500/bkpPTZUdq31UGDovmszsg2CchiI.jpg"
+                            <div className="duration-block">
+                                Duration: {movie?.runtime} MINS
+                            </div>
+
+                            <div className="details-image-block" style={{
+                                transition: "all 0.5s ease",
+                                filter: movieLoading ? "blur(5px)" : "none",
+                            }}>
+                                <img src={imageUrl}
                                      alt="Film Poster"/>
                             </div>
-                            <div className="details-card-title">
-                                <h1>Locked in</h1>
-                                <h3>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum
-                                    est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit
-                                    litterarum
-                                    formas humanitatis per seacula quarta decima et quinta decima.</h3>
-                                <h2>Released: 15 Nov, 2017</h2>
+                            <div className="details-card-title" style={{
+                                transition: "all 0.5s ease",
+                                filter: movieLoading ? "blur(5px)" : "none",
+                            }}>
+                                <h1>{movie?.original_title || ""}</h1>
+                                <h3>{movie?.overview || ""}</h3>
+                                <h2>{movie?.release_date || ""}</h2>
                                 <div className="data-film-rating">
-                                    <p><StarHalf size={20} weight="duotone" color="green"/>44</p>
-                                    <p><UsersThree size={20} weight="duotone" color="#ec7532"/>10 Votes</p>
-                                    <p><GlobeHemisphereEast size={20} weight="duotone" color="#ec7532"/>323</p>
+                                    <p><StarHalf size={20} weight="duotone" color={ratingColor}/>{movie?.vote_average}</p>
+                                    <p><UsersThree size={20} weight="duotone" color="#ec7532"/>{movie?.vote_count} Votes
+                                    </p>
+                                    <p><GlobeHemisphereEast size={20} weight="duotone"
+                                                            color="#ec7532"/>{movie?.popularity}</p>
                                 </div>
                                 <div className="film-language">
-                                    <div className="language-box"><p>en</p></div>
-                                    <div className="adult-box"><p>12+</p></div>
+                                    <div className="language-box"><p>{movie?.original_language}</p></div>
+                                    {movie?.adult ?
+                                        <div className="adult-box" style={{background: "red"}}><p>18+</p></div> :
+                                        <div className="adult-box" style={{background: "green"}}><p>12+</p></div>}
+
                                 </div>
                             </div>
 
