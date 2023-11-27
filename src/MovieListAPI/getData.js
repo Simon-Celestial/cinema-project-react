@@ -4,7 +4,6 @@ export const getData = async (page) => {
     return data.results;
 }
 export const getSingleData = async (id) => {
-    let res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=d323ed554bb4852147d6630b1aa573a3`);
-    let data = await res.json();
-    return data;
+    return await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=d323ed554bb4852147d6630b1aa573a3`)
+        .then(res => res.json());
 }

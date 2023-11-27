@@ -3,25 +3,29 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const FetchedDataItems = ({
-                              original_language: language,
-                              adult,
-                              original_title: title,
-                              popularity,
-                              release_date: release,
-                              overview,
-                              vote_average: rating,
-                              vote_count: votes,
-                              poster_path: image
+                              product,
                           }) => {
+    const {
+        id,
+        original_language: language,
+        adult,
+        original_title: title,
+        popularity,
+        release_date: release,
+        overview,
+        vote_average: rating,
+        vote_count: votes,
+        poster_path: image
+    } = product;
+
     const imageUrl = `https://image.tmdb.org/t/p/w500${image}`;
     const ratingColor = rating < 5 ? "red" : (rating < 7 ? "#ec7532" : "green");
-
 
     return (
         <div className="data-wrapper">
             <div className="data-image-block">
                 <img src={imageUrl} alt="Film Poster"/>
-                <Link to="/details" className="more-info-block" target="_blank">
+                <Link to={`/details/${id}`} className="more-info-block" target="_blank">
                     <div className="play-circle">
                         <Play size={20} weight="fill"/>
                     </div>

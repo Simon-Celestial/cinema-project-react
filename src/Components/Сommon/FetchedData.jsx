@@ -70,7 +70,7 @@ const FetchedData = () => {
                 {filteredData.map((product) => (
                     <FetchedDataItems
                         key={product.id}
-                        {...product}
+                        product={product}
                     />
                 ))}
             </div>
