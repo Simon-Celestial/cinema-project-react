@@ -79,6 +79,12 @@
           flex-direction: column;
           width: 60%;
           gap: 10px;
+          > p {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fbbd61;
+          }
           h1 {
             font-size: 52px;
             font-weight: 300;

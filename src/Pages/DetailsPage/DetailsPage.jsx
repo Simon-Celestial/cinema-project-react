@@ -64,11 +64,13 @@ const DetailsPage = () => {
                                 transition: "all 0.5s ease",
                                 filter: movieLoading ? "blur(5px)" : "none",
                             }}>
+                                <p>{movie?.genres.map(genre => genre.name).filter(Boolean).join(', ')}</p>
                                 <h1>{movie?.original_title || ""}</h1>
                                 <h3>{movie?.overview || ""}</h3>
-                                <h2>{movie?.release_date || ""}</h2>
+                                <h2>Release date: {movie?.release_date || ""}</h2>
                                 <div className="data-film-rating">
-                                    <p><StarHalf size={20} weight="duotone" color={ratingColor}/>{movie?.vote_average}</p>
+                                    <p><StarHalf size={20} weight="duotone" color={ratingColor}/>{movie?.vote_average}
+                                    </p>
                                     <p><UsersThree size={20} weight="duotone" color="#ec7532"/>{movie?.vote_count} Votes
                                     </p>
                                     <p><GlobeHemisphereEast size={20} weight="duotone"
