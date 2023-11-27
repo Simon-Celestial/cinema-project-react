@@ -1,6 +1,7 @@
 import "./Header.scss";
 import {Phone} from "@phosphor-icons/react";
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import {Link} from "react-router-dom";
 
 
 const Header = () => {
@@ -23,34 +24,36 @@ const Header = () => {
                     </a>
                 </div>
                 <div className="header-bottom">
-                    <a  href="#" className="header-bottom-logo">
+                    <Link to="/" className="header-bottom-logo">
                         <img src="//xenothemes.co.uk/specto/wp-content/uploads/sites/2/2018/02/logo.svg"
                              alt="Site logo"/>
-                    </a>
+                    </Link>
                     <div className="header-bottom-navigation">
-                        <a href="/">
+                        <Link to="/" className="nav-item">
                             HOME
-                        </a>
-                        <a href="#"
+                        </Link>
+                        <div className="nav-item"
                            onMouseEnter={handleMouseEnter}
                            onMouseLeave={handleMouseLeave}
                         >
-                            WHAT'S ON
+                           <Link to="/what'sOn">
+                               WHAT'S ON
+                           </Link>
                             <div className={`nav-dropdown ${isDropdownOpen ? 'nav-dropdown-active' : ''}`}>
-                                <h5>
+                                <Link to="/allMovies" >
                                     ALL MOVIES
-                                </h5>
+                                </Link>
                             </div>
-                        </a>
-                        <a href="#">
+                        </div>
+                        <Link to="/" className="nav-item">
                             NEWS
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link to="/" className="nav-item">
                             SHORTCODES
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link to="/" className="nav-item">
                             CONTACT US
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

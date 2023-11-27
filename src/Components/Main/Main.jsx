@@ -6,6 +6,8 @@ import {Star, Play, CalendarBlank, CaretRight} from "@phosphor-icons/react";
 import React from "react";
 import SliderCardContainer from "../Сommon/SliderCardContainer.jsx";
 import FetchedData from "../Сommon/FetchedData.jsx";
+import ScheduleSection from "../Сommon/ScheduleSection.jsx";
+import SupportContainer from "../Сommon/SupportContainer.jsx";
 
 const Main = () => {
     return (
@@ -45,41 +47,7 @@ const Main = () => {
 
             {/*FILMS SCHEDULE SECTION*/}
             <section className="site-section schedule-section">
-                <div className="schedule-section-content">
-                    <div className="schedule-heading-days">
-                        <div className="days-block">
-                            <div className="day">
-                                <p>MON</p>
-                            </div>
-                            <div className="day">
-                                <p>TUE</p>
-                            </div>
-                            <div className="day">
-                                <p>TODAY</p>
-                            </div>
-                            <div className="day">
-                                <p>THU</p>
-                            </div>
-                            <div className="day">
-                                <p>FRI</p>
-                            </div>
-                            <div className="day">
-                                <p>SAT</p>
-                            </div>
-                            <div className="day">
-                                <p>SUN</p>
-                            </div>
-                        </div>
-                        <div className="current-date">
-                            <p>
-                                WED, 22 NOVEMBER</p>
-                        </div>
-                    </div>
-                    <div className="schedule-films-container">
-                        <ScheduleFilms/>
-                    </div>
-
-                </div>
+                <ScheduleSection />
             </section>
             {/*COMING SOON SECTION*/}
             <section className="site-section coming-soon-section">
@@ -135,10 +103,7 @@ const Main = () => {
             </section>
             {/*SUPPORT SECTION*/}
             <section className="site-section support-section">
-                <div className="support-content">
-                    <p>Need help? Contact our support team on</p>
-                    <h1>0330 123 4567</h1>
-                </div>
+                <SupportContainer />
             </section>
         </>
     )

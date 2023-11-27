@@ -2,6 +2,7 @@ import React, {useEffect, useState, useRef} from "react";
 import {getData} from "../../MovieListAPI/getData.js";
 import FetchedDataItems from "./FetchedDataItems.jsx";
 import {ArrowFatRight, ArrowFatLeft} from "@phosphor-icons/react";
+import "./FetchedData.scss";
 
 const FetchedData = () => {
     const [data, setData] = useState([]);

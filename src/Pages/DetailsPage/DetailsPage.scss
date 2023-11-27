@@ -1,0 +1,131 @@
+.details-page-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.details-page-main {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  .details-page-background {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    .details-page-background-content {
+      width: 1170px;
+      padding: 200px 15px 50px 15px;
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+      .details-page-heading {
+        display: flex;
+        width: 100%;
+        margin-bottom: 50px;
+        border-bottom: 2px solid var(--dark-border-color);
+        .details-page-heading-item {
+          display: flex;
+          position: relative;
+          padding-bottom: 25px;
+          &:after {
+            position: absolute;
+            right: auto;
+            bottom: -1px;
+            display: block;
+            width: 125px;
+            height: 4px;
+            content: '';
+            background-image: linear-gradient(to right, #fbbd61, #ec7532);
+
+          }
+          p {
+            color: var(--dark-orange-color);
+            font-size: 18px;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .details-page-film-card {
+        display: flex;
+        width: 100%;
+        gap: 30px;
+        .details-image-block {
+          display: flex;
+          width: 270px;
+          height: 340px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .details-card-title {
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+          gap: 10px;
+          h1 {
+            font-size: 52px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: white;
+          }
+          h3 {
+            font-size: 18px;
+            color: #fff;
+            text-align: start;
+          }
+          h2 {
+            font-size: 16px;
+            color: gray;
+          }
+          .data-film-rating {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            p {
+              display: inline-flex;
+              align-items: center;
+              gap: 5px;
+            }
+          }
+          .film-language {
+            display: flex;
+            gap: 5px;
+            .language-box {
+              width: 35px;
+              height: 35px;
+              text-align: center;
+              background: var(--dark-orange-color);
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              p {
+                color: white;
+              }
+            }
+            .adult-box {
+              width: 35px;
+              height: 35px;
+              text-align: center;
+              background: green;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              p {
+                color: white;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
